@@ -55,6 +55,7 @@ body {
 .card-wrapper {
   width: min(100%, 46rem);
   margin-inline: auto;
+  display: grid;
   container: card/inline-size;
 }
 
@@ -62,12 +63,17 @@ body {
   padding-block: 2.5rem;
   border-radius: 1.5rem;
   margin-block: 7.69rem;
+  display: grid;
+  grid-template-columns: [full-width-start] 2.5rem [content-start] 1fr [content-end] 2.5rem [full-width-end];
   background-color: var(--clr-surface);
   color: var(--clr-txt-body);
   transition: all 0.3s ease-in-out;
 }
 .card :has(.card__img) .card__text {
   padding-block-start: 2.5rem;
+}
+.card > * {
+  grid-column: content;
 }
 .card__divider {
   height: 1px;
@@ -101,17 +107,12 @@ body {
   transition: all 0.3s ease-in-out;
 }
 .card__img {
-  max-width: calc(100% - 5rem);
-  align-self: stretch;
-  margin-inline: 2.5rem;
+  max-width: 100%;
+  margin-block-end: 2.5rem;
   border-radius: var(--br);
   font-style: italic;
   background-color: var(--clr-body);
-  transition: all 0.3s ease-in-out;
-}
-.card__text {
-  padding-inline: 2.5rem;
-  transition: all 0.3s ease-in-out;
+  transition: all 500ms ease;
 }
 .card__text-bold {
   font: var(--body-bold);
@@ -125,9 +126,17 @@ body {
 .card__prep {
   padding: 1.75rem;
   border-radius: var(--br);
-  margin-block-end: 2rem;
   background-color: var(--clr-accent-surface);
   transition: all 0.3s ease-in-out;
+}
+section:not(:has(.card__table)) {
+  padding-block-end: 2rem;
+}
+.card section:not(:first-child) {
+  padding-block-start: 2rem;
+}
+section:not(:has(.card__table, time)) {
+  border-bottom: 1px solid var(--clr-divider);
 }
 .card__list {
   padding-left: 1.5rem;
@@ -166,16 +175,25 @@ body {
   color: var(--clr-txt-sub-heading);
 }
 
+@keyframes full-width {
+  0% {
+    grid-column: content;
+  }
+  100% {
+    grid-column: full-width;
+  }
+}
 @container card (width < 41rem) {
   .card {
     padding-block-start: 0;
     border-radius: 0;
     margin-block: 0;
+    grid-template-columns: [full-width-start] 2rem [content-start] 1fr [content-end] 2rem [full-width-end];
   }
   .card__img {
     max-width: 100%;
     border-radius: 0;
-    margin: 0;
+    animation: full-width 300ms ease-in-out forwards;
   }
   .card__text {
     padding-inline: 2rem;
