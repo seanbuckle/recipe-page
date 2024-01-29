@@ -52,10 +52,6 @@ body {
   text-wrap: pretty;
 }
 
-main {
-  padding-block-end: 1.5rem;
-}
-
 .card-wrapper {
   width: min(100%, 46rem);
   margin-inline: auto;
@@ -65,7 +61,7 @@ main {
 .card {
   padding-block: 2.5rem;
   border-radius: 1.5rem;
-  margin-block-start: 7.69rem;
+  margin-block: 7.69rem;
   background-color: var(--clr-surface);
   color: var(--clr-txt-body);
   transition: all 0.3s ease-in-out;
@@ -138,6 +134,10 @@ main {
 }
 .card__list-item {
   padding-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+.card__list-item:last-child {
+  margin-bottom: 0;
 }
 .card__list-item::marker {
   color: var(--clr-txt-sub-heading);
@@ -170,7 +170,7 @@ main {
   .card {
     padding-block-start: 0;
     border-radius: 0;
-    margin-block-start: 0;
+    margin-block: 0;
   }
   .card__img {
     max-width: 100%;
