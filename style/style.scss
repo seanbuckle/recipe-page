@@ -21,12 +21,15 @@ body{
 .card-wrapper{
   width: min(100%, 46rem);
   margin-inline: auto;
+  display: grid;
   container: card / inline-size;
 }
 .card {
   padding-block: 2.5rem;
   border-radius: 1.5rem;
   margin-block: 7.69rem;
+  display: grid;
+  grid-template-columns: [full-width-start] 2.5rem [content-start] 1fr [content-end] 2.5rem [full-width-end];
   background-color: var(--clr-surface);
   color: var(--clr-txt-body);
   transition: all 0.3s ease-in-out;
@@ -34,6 +37,9 @@ body{
     .card__text{
       padding-block-start: 2.5rem;
     }
+  }
+  & > * {
+    grid-column: content;
   }
   &__divider{
     height: 1px;
@@ -67,20 +73,15 @@ body{
     transition: all 0.3s ease-in-out;
   }
   &__img {
-    max-width: calc(100% - (2.5rem * 2));
-    align-self: stretch;
-    margin-inline: 2.5rem;
+    max-width: 100%;
+    margin-block-end: 2.5rem;
     border-radius: var(--br);
     font-style: italic;
     background-color: var(--clr-body);
-    transition: all 0.3s ease-in-out;
+    transition: all 500ms ease;
   }
-  &__text{
-    padding-inline: 2.5rem;
-    transition: all 0.3s ease-in-out;
-    &-bold{
-      font: var(--body-bold);
-    }
+  &__text-bold{
+    font: var(--body-bold);
   }
   &__descr{
     :has(+ .card__table){
@@ -93,9 +94,17 @@ body{
   &__prep{
     padding: 1.75rem;
     border-radius: var(--br);
-    margin-block-end: 2rem;
     background-color: var(--clr-accent-surface);
     transition: all 0.3s ease-in-out;
+  }
+  section:not(:has(&__table)){
+    padding-block-end: 2rem;
+  }
+  section:not(:first-child){
+    padding-block-start: 2rem;
+  }
+  section:not(:has(&__table, time)){
+    border-bottom: 1px solid var(--clr-divider);
   }
   &__list{
     padding-left: 1.5rem;
@@ -136,15 +145,25 @@ body{
     }
   }
 }
+@keyframes full-width {
+  0% {
+    grid-column: content;
+  }
+  100% {
+    grid-column: full-width;
+  }
+  
+}
 @container card (width < 41rem) {
   .card {
     padding-block-start: 0;
     border-radius: 0;
     margin-block: 0;
+    grid-template-columns: [full-width-start] 2rem [content-start] 1fr [content-end] 2rem [full-width-end];
     &__img {
       max-width: 100%;
       border-radius: 0;
-      margin: 0;
+      animation: full-width 300ms ease-in-out forwards;
     }
     &__text{
       padding-inline: 2rem;
