@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn how to make a simple omelette with this easy recipe.">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Recipe page</title>
+  <link rel="stylesheet" href="./style/style.min.css">
+</head>
+<body>
+  <main>
+    <div class="card-wrapper">
+      <article class="card">
+        <img src="./images/image-omelette.webp" alt="Omelette with vegetables and meat" class="card__img">
+        <section class="card__text">
+          <h1 class="card__heading-l">Simple Omelette Recipe</h1>
+          <p class="card__descr">An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked to perfection, optionally filled with your choice of cheese, vegetables, or meats.</p>
+          <section class="card__prep" role="region" aria-labelledby="prep-time">
+            <h2 class="card__heading-s" id="prep-time">Preparation time</h2>
+            <ul class="card__list">
+              <li class="card__list-item">
+                <span class="card__text-bold">Total:</span> Approximately <time datetime="PT10M">10 minutes</time>
+              </li>
+              <li class="card__list-item">
+                <span class="card__text-bold">Preparation:</span> <time datetime="PT5M">5 minutes</time>
+              </li>
+              <li class="card__list-item">
+                <span class="card__text-bold">Cooking:</span> <time datetime="PT5M">5 minutes</time>
+              </li>
+            </ul>
+          </section>
+          <section role="region" aria-labelledby="ingredients">
+            <h2 class="card__heading-m" id="ingredients">Ingredients</h2>
+            <ul class="card__list">
+              <li class="card__list-item">2-3 large eggs</li>
+              <li class="card__list-item">Salt, to taste</li>
+              <li class="card__list-item">Pepper, to taste</li>
+              <li class="card__list-item">1 tablespoon of butter or oil</li>
+              <li class="card__list-item">Optional fillings: cheese, diced vegetables, cooked meats, herbs</li>
+            </ul>
+          </section>
+          <hr class="card__divider">
+          <section role="region" aria-labelledby="instructions">
+            <h2 class="card__heading-m" id="instructions">Instructions</h2>
+            <ol class="card__list">
+              <li class="card__list-item">
+                <span class="card__text-bold">Beat the eggs:</span> In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. You can add a tablespoon of water or milk for a fluffier texture.
+              </li>
+              <li class="card__list-item">
+                <span class="card__text-bold">Heat the pan:</span> Place a non-stick frying pan over medium heat and add butter or oil.
+              </li>
+              <li class="card__list-item">
+                <span class="card__text-bold">Cook the omelette:</span> Once the butter is melted and bubbling, pour in the eggs.
+                Tilt the pan to ensure the eggs evenly coat the surface.
+              </li>
+              <li class="card__list-item">
+                <span class="card__text-bold">Add fillings (optional):</span> When the eggs begin to set at the edges but are still slightly runny in the middle, sprinkle your chosen fillings over one half of the omelette.
+              </li>
+              <li class="card__list-item">
+                <span class="card__text-bold">Fold and serve:</span> As the omelette continues to cook, carefully lift one edge and fold it over the 
+                fillings. Let it cook for another minute, then slide it onto a plate.
+              </li>
+              <li class="card__list-item"><span class="card__text-bold">Enjoy:</span> Serve hot, with additional salt and pepper if needed.</li>
+            </ol>
+          </section>
+          <hr class="card__divider">
+          <section role="region" aria-labelledby="nutrition">
+            <h2 class="card__heading-m" id="nutrition">Nutrition</h2>
+            <p class="card__descr">The table below shows nutritional values per serving without the additional fillings.</p>
+            <table class="card__table">
+              <tr class="card__table-row">
+                <th class="card__table-head">Calories</th>
+                <td class="card__table-body">277kcal</td>
+              </tr>
+              <tr class="card__table-row">
+                <th class="card__table-head">Carbs</th>
+                <td class="card__table-body">0g</td>
+              </tr>
+              <tr class="card__table-row">
+                <th class="card__table-head">Protein</th>
+                <td class="card__table-body">20g</td>
+              </tr>
+              <tr class="card__table-row">
+                <th class="card__table-head">Fat</th>
+                <td class="card__table-body">22g</td>
+              </tr>
+            </table>
+          </section>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="attribution">
+    <p>
+      Challenge by <a href="https://www.frontendmentor.io/challenges/recipe-page-KiTsR8QQKm" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/seanbuckle/recipe-page" target="_blank">Sean Buckle</a>.
+    </p>
+  </footer>
+</body>
+</html>
